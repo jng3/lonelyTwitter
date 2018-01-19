@@ -1,0 +1,22 @@
+package ca.ualberta.cs.lonelytwitter;
+
+import java.util.Date;
+
+/**
+ * Created by jng1 on 1/18/18.
+ */
+
+public class Happy extends Mood {
+
+    public Happy() {
+        super();
+    }
+
+    public Happy(Date date) {
+        super(date);
+    }
+
+    public String getMood() {
+        return "Happy";
+    }
+}
