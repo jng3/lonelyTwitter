@@ -16,6 +16,7 @@ public class Sad extends Mood {
         super(date);
     }
 
+    @Override
     public String getMood() {
         return "Sad";
     }
