@@ -1,3 +1,12 @@
+
+/*
+ *  Copyright 2018 Team X, CMPUT301, University of Alberta - All Rights Reserved.
+ *  You may use, distribute or modify this code under terms and conditions of Student Behavior at
+ *  University of Alberta
+ *  You can find a copy of the license in this project. Otherwise, please
+ *  contact @abc.ca
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -26,6 +35,12 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * Handles the activity for the lonely twitter app
+ *
+ * @author dezfuli
+ * @version 1.0
+ */
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "tweet_list.sav";
@@ -34,8 +49,12 @@ public class LonelyTwitterActivity extends Activity {
 
 	private ArrayList<Tweet> tweetList;
 	private ArrayAdapter<Tweet> adapter;
-	
-	/** Called when the activity is first created. */
+
+	/**
+	 * Called when the activity is first created. Monitors user activity.
+	 *
+	 * @param savedInstanceState
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -79,6 +98,9 @@ public class LonelyTwitterActivity extends Activity {
 		});
 	}
 
+	/**
+	 * Initializes the adapter
+	 */
 	@Override
 	protected void onStart() {
 
@@ -93,6 +115,9 @@ public class LonelyTwitterActivity extends Activity {
 
 	}
 
+	/**
+	 * Loads tweets from file
+	 */
 	private void loadFromFile() {
 
 		try {
@@ -112,7 +137,10 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
-	
+
+	/**
+	 * Saves new tweets to file
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
@@ -130,6 +158,9 @@ public class LonelyTwitterActivity extends Activity {
 		}
 	}
 
+	/**
+	 * Release resources
+	 */
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
